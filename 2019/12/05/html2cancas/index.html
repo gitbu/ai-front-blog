@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>html2canvas - Ai 前端技术团队</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="html2canvas简介html2canvas是一个基于DOM的屏幕截图脚本，它可以根据页面上的可用信息构建屏幕截图，因此可能无法准确生成实际的屏幕截图。
+原理
+遍历所需截图节点内的DOM元素
+
+,"> 
+    <meta name="author" content="Ai Team"> 
+    <link rel="alternative" href="atom.xml" title="Ai 前端技术团队" type="application/atom+xml"> 
+    <link rel="icon" href="/ai-front-blog/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/ai-front-blog/css/obsidian.css">
+    <link rel="stylesheet" href="/ai-front-blog/css/ball-atom.min.css">
+</head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Ai 前端技术团队</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://gitbu.github.io/ai-front-blog">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">html2canvas</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" target="_blank" rel="noopener" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/前端截图"><b>「
+                    </b>前端截图<b> 」</b></a>
+                
+                December 05, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/ai-front-blog/2019/12/05/html2cancas/" title="html2canvas" class="">html2canvas</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    5k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    5 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/ai-front-blog/tags/%E5%89%8D%E7%AB%AF%E6%88%AA%E5%9B%BE/" rel="tag">前端截图</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="html2canvas"><a href="#html2canvas" class="headerlink" title="html2canvas"></a><a href="https://html2canvas.hertzen.com/" target="_blank" rel="noopener">html2canvas</a></h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>html2canvas</code>是一个基于<code>DOM</code>的屏幕截图脚本，它可以根据页面上的可用信息构建屏幕截图，因此可能无法准确生成实际的屏幕截图。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li><p>遍历所需截图节点内的<code>DOM</code>元素</p>
+</li>
+<li><p>读取这些元素的属性并重新构建页面</p>
+<p><code>ps:</code> 它实际上并不是截取页面的屏幕快照，而是根据它从DOM读取的属性来构建页面的表示形式。</p>
+<p><code>warn:</code>它只能正确呈现它理解的<code>CSS</code>属性。详见<a href="http://html2canvas.hertzen.com/features" target="_blank" rel="noopener">features</a></p>
+</li>
+</ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
+<li><p>安装 <code>npm install --save html2canvas</code></p>
+</li>
+<li><p>开始截图</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">html2canvas(<span class="built_in">document</span>.body).then(<span class="function"><span class="keyword">function</span>(<span class="params">canvas</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(canvas);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>截图配置项</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left"><code>Name</code></th>
+<th align="left"><code>Default</code></th>
+<th align="left"><code>Description</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>allowTaint</code></td>
+<td align="left"><code>false</code></td>
+<td align="left">是否允许跨域图像污染画布</td>
+</tr>
+<tr>
+<td align="left"><code>backgroundColor</code></td>
+<td align="left"><code>#ffffff</code></td>
+<td align="left">画布背景色，如果未在<code>DOM</code>中指定，设置<code>null</code>为透明</td>
+</tr>
+<tr>
+<td align="left"><code>canvas</code></td>
+<td align="left"><code>null</code></td>
+<td align="left">现有的<code>canvas</code>元素可用作绘图的基础</td>
+</tr>
+<tr>
+<td align="left"><code>foreignObjectRendering</code></td>
+<td align="left"><code>false</code></td>
+<td align="left">是否在浏览器支持的情况下使用<code>ForeignObject</code>渲染</td>
+</tr>
+<tr>
+<td align="left"><code>imageTimeout</code></td>
+<td align="left"><code>15000</code></td>
+<td align="left">加载图像的超时时间（以毫秒为单位）。设置为<code>0</code>时禁用超时。</td>
+</tr>
+<tr>
+<td align="left"><code>ignoreElements</code></td>
+<td align="left"><code>(element) =&gt; false</code></td>
+<td align="left">判定函数，可以删除渲染中匹配的元素。</td>
+</tr>
+<tr>
+<td align="left"><code>logging</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">启用日志记录以进行调试</td>
+</tr>
+<tr>
+<td align="left"><code>onclone</code></td>
+<td align="left"><code>null</code></td>
+<td align="left">克隆文档以进行渲染时调用的回调函数可用于修改将要渲染的内容，而不会影响原始源文档。</td>
+</tr>
+<tr>
+<td align="left"><code>proxy</code></td>
+<td align="left"><code>null</code></td>
+<td align="left"><code>Url</code>转到代理上 ，用于加载跨源图像。如果留空，则不会加载跨原始图像。</td>
+</tr>
+<tr>
+<td align="left"><code>removeContainer</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">是否要清理<code>html2canvas临时创建的</code>克隆的DOM`元素</td>
+</tr>
+<tr>
+<td align="left"><code>scale</code></td>
+<td align="left"><code>window.devicePixelRatio</code></td>
+<td align="left">用于渲染的比例，默认为浏览器设备像素比率</td>
+</tr>
+<tr>
+<td align="left"><code>useCORS</code></td>
+<td align="left"><code>false</code></td>
+<td align="left">用来设置是否允许使用跨域的图片进行访问</td>
+</tr>
+<tr>
+<td align="left"><code>width</code></td>
+<td align="left"><code>Element width</code></td>
+<td align="left"><code>canvas</code>的宽度</td>
+</tr>
+<tr>
+<td align="left"><code>height</code></td>
+<td align="left"><code>Element height</code></td>
+<td align="left"><code>canvas</code>的高度</td>
+</tr>
+<tr>
+<td align="left"><code>x</code></td>
+<td align="left"><code>Element x-offset</code></td>
+<td align="left">裁剪画布<code>x</code>坐标</td>
+</tr>
+<tr>
+<td align="left"><code>y</code></td>
+<td align="left"><code>Element y-offset</code></td>
+<td align="left">裁剪画布<code>y</code>坐标</td>
+</tr>
+<tr>
+<td align="left"><code>scrollX</code></td>
+<td align="left"><code>Element scrollX</code></td>
+<td align="left">渲染元素<code>x</code>方向的滚动位置(例如，如果<code>Element</code>使用<code>position: fixed</code> )</td>
+</tr>
+<tr>
+<td align="left"><code>scrollY</code></td>
+<td align="left"><code>Element scrollY</code></td>
+<td align="left">渲染元素<code>y</code>方向的滚动位置(例如，如果<code>Element</code>使用<code>position: fixed</code> )</td>
+</tr>
+<tr>
+<td align="left"><code>windowWidth</code></td>
+<td align="left"><code>Window.innerWidth</code></td>
+<td align="left">渲染元素时使用的窗口宽度，这可能会影响媒体查询之类的东西</td>
+</tr>
+<tr>
+<td align="left"><code>windowHeight</code></td>
+<td align="left"><code>Window.innerHeight</code></td>
+<td align="left">染时使用的窗口高度 Element ，这可能会影响媒体查询等内容</td>
+</tr>
+</tbody></table>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><h3 id="图片跨域问题"><a href="#图片跨域问题" class="headerlink" title="图片跨域问题"></a>图片跨域问题</h3>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/ai-front-blog/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
+                    <p>Ai Team</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">2 <p>Articles</p></a></li>
+                    <li><a href="/categories">2 <p>Categories</p></a></li>
+                    <li><a href="/tags">2 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#html2canvas"><span class="toc-number">1.</span> <span class="toc-text">html2canvas</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-number">1.2.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">1.3.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解决"><span class="toc-number">1.4.</span> <span class="toc-text">问题解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图片跨域问题"><span class="toc-number">1.4.1.</span> <span class="toc-text">图片跨域问题</span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2021
+        <span class="gradient-text">
+            Ai Team
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/ai-front-blog/js/plugin.js"></script>
+<script src="/ai-front-blog/js/obsidian.js"></script>
+<script src="/ai-front-blog/js/jquery.truncate.js"></script>
+<script src="/ai-front-blog/js/search.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+    <script src="/ai-front-blog/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>
